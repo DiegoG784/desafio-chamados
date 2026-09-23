@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
+import Header from '../components/Header'
 
 function EdicaoChamado({ chamados, onEdit }) {
     // const navigate = useNavigate()
@@ -43,75 +44,79 @@ function EdicaoChamado({ chamados, onEdit }) {
     //     )
     // }
     return (
-        <main className="pagina-clientes">
-            <h1>Alterar Chamado</h1>
-            <form
-                className="formulario-cliente"
-                onSubmit={alterarChamado}
-            >
-                <label htmlFor="titulo">Título</label>
-                <input
-                    id="titulo"
-                    type="text"
-                    value={titulo}
-                    onChange={(evento) => {
-                        setTitulo(evento.target.value)
-                    }}
-                    required
-                />
+        <>
+            <Header />
+
+            <main className="pagina-clientes">
+                <h1>Alterar Chamado</h1>
+                <form
+                    className="formulario-cliente"
+                    onSubmit={alterarChamado}
+                >
+                    <label htmlFor="titulo">Título</label>
+                    <input
+                        id="titulo"
+                        type="text"
+                        value={titulo}
+                        onChange={(evento) => {
+                            setTitulo(evento.target.value)
+                        }}
+                        required
+                    />
 
 
-                <label htmlFor="descricao">Descrição</label>
-                <input
-                    id="descricao"
-                    type="text"
-                    value={descricao}
-                    onChange={(evento) => {
-                        setDescricao(evento.target.value)
-                    }}
-                    required
-                />
+                    <label htmlFor="descricao">Descrição</label>
+                    <input
+                        id="descricao"
+                        type="text"
+                        value={descricao}
+                        onChange={(evento) => {
+                            setDescricao(evento.target.value)
+                        }}
+                        required
+                    />
 
 
 
-                <label htmlFor="prioridade">Prioridade</label>
-                <input
-                    id="prioridade"
-                    type="number"
-                    value={prioridade}
-                    onChange={(evento) => {
-                        setPrioridade(evento.target.value)
-                    }}
-                    required
-                />
+                    <label htmlFor="prioridade">Prioridade</label>
+                    <input
+                        id="prioridade"
+                        type="number"
+                        value={prioridade}
+                        onChange={(evento) => {
+                            setPrioridade(evento.target.value)
+                        }}
+                        required
+                    />
 
 
-                <label htmlFor="solicitante">Solicitante</label>
-                <input
-                    id="solicitante"
-                    type="text"
-                    value={solicitante}
-                    onChange={(evento) => {
-                        setSolicitante(evento.target.value)
-                    }}
-                    required
-                />
+                    <label htmlFor="solicitante">Solicitante</label>
+                    <input
+                        id="solicitante"
+                        type="text"
+                        value={solicitante}
+                        onChange={(evento) => {
+                            setSolicitante(evento.target.value)
+                        }}
+                        required
+                    />
 
-                <label htmlFor="status">Status</label>
-                <select defaultValue={status} onChange={(e) => setStatus(e.target.value)}>
-                    <option value={"ABERTO"} selected>Aberto</option>
-                    <option value={"FECHADO"}>Fechado</option>
-                    <option value={"PENDENTE"}>Pendente</option>
-                </select>
+                    <label htmlFor="status">Status</label>
+                    <select defaultValue={status} onChange={(e) => setStatus(e.target.value)}>
+                        <option value={"ABERTO"} selected>Aberto</option>
+                        <option value={"FECHADO"}>Fechado</option>
+                        <option value={"PENDENTE"}>Pendente</option>
+                    </select>
 
 
-                <button type="submit">Editar Chamado</button>
+                    <button type="submit">Editar Chamado</button>
 
-            </form>
-            <Link to="/chamados/listar">
-                Voltar para a lista de chamados
-            </Link>
-        </main>
+                </form>
+                <Link to="/chamados/listar">
+                    Voltar para a lista de chamados
+                </Link>
+            </main>
+        </>
 
     )
 }

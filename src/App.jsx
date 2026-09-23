@@ -55,7 +55,7 @@ function App() {
           <main>
             <Header/>
             
-            <section className="modulos">
+            <section className="modulos" style={{margin: 50}}>
 								{modules.map((module) => (
 									<LinkCard
 										key={module.id}

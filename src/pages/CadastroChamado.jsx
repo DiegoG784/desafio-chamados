@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import Header from "../components/Header";
 
 export default function CadastroChamado({ clientes, onSubmission }) {
     const [titulo, setTitulo] = useState('')
@@ -26,80 +27,84 @@ export default function CadastroChamado({ clientes, onSubmission }) {
     }
 
     return (
-        <main className="pagina-clientes">
-            <h1>Cadastrar novo Chamado</h1>
+        <>
+            <Header />
+            <main className="pagina-clientes">
 
-            {mensagemSucesso && (
-                <p className="mensagem-sucesso">
-                    {mensagemSucesso}
-                </p>
-            )}
+                <h1>Cadastrar novo Chamado</h1>
 
-            <form className="formulario-cliente" onSubmit={cadastrar} noValidate>
-                <label htmlFor="titulo">Título</label>
-                <input
-                    id="titulo"
-                    type="text"
-                    value={titulo}
-                    onChange={(evento) => {
-                        setTitulo(evento.target.value)
-                        // onSubmit = {
-                        //     cadastrarChamado
-                        // }
+                {mensagemSucesso && (
+                    <p className="mensagem-sucesso">
+                        {mensagemSucesso}
+                    </p>
+                )}
 
-                    }}
-                    required
-                />
+                <form className="formulario-cliente" onSubmit={cadastrar} noValidate>
+                    <label htmlFor="titulo">Título</label>
+                    <input
+                        id="titulo"
+                        type="text"
+                        value={titulo}
+                        onChange={(evento) => {
+                            setTitulo(evento.target.value)
+                            // onSubmit = {
+                            //     cadastrarChamado
+                            // }
 
-
-                <label htmlFor="descricao">Descrição</label>
-                <input
-                    id="descricao"
-                    type="text"
-                    value={descricao}
-                    onChange={(evento) => {
-                        setDescricao(evento.target.value)
-                    }}
-                    required
-                />
+                        }}
+                        required
+                    />
 
 
-
-                <label htmlFor="prioridade">Prioridade</label>
-                <input
-                    id="prioridade"
-                    type="number"
-                    value={prioridade}
-                    onChange={(evento) => {
-                        setPrioridade(evento.target.value)
-                    }}
-                    required
-                />
-
-
-                <label htmlFor="solicitante">Solicitante</label>
-                <input
-                    id="solicitante"
-                    type="text"
-                    value={solicitante}
-                    onChange={(evento) => {
-                        setSolicitante(evento.target.value)
-                    }}
-                    required
-                />
-
-                <label htmlFor="status">Status</label>
-                <select defaultValue={status}>
-                    <option value={"ABERTO"} selected>Aberto</option>
-                    <option value={"FECHADO"}>Fechado</option>
-                    <option value={"PENDENTE"}>Pendente</option>
-                </select>
+                    <label htmlFor="descricao">Descrição</label>
+                    <input
+                        id="descricao"
+                        type="text"
+                        value={descricao}
+                        onChange={(evento) => {
+                            setDescricao(evento.target.value)
+                        }}
+                        required
+                    />
 
 
-                <button type="submit">Cadastrar Chamado</button>
-            </form>
 
-            <Link to="/chamados">Voltar para Gerenciamento de Chamados</Link>
-        </main>
+                    <label htmlFor="prioridade">Prioridade</label>
+                    <input
+                        id="prioridade"
+                        type="number"
+                        value={prioridade}
+                        onChange={(evento) => {
+                            setPrioridade(evento.target.value)
+                        }}
+                        required
+                    />
+
+
+                    <label htmlFor="solicitante">Solicitante</label>
+                    <input
+                        id="solicitante"
+                        type="text"
+                        value={solicitante}
+                        onChange={(evento) => {
+                            setSolicitante(evento.target.value)
+                        }}
+                        required
+                    />
+
+                    <label htmlFor="status">Status</label>
+                    <select defaultValue={status}>
+                        <option value={"ABERTO"} selected>Aberto</option>
+                        <option value={"FECHADO"}>Fechado</option>
+                        <option value={"PENDENTE"}>Pendente</option>
+                    </select>
+
+
+                    <button type="submit">Cadastrar Chamado</button>
+                </form>
+
+                <Link to="/chamados">Voltar para Gerenciamento de Chamados</Link>
+            </main>
+        </>
     )
 }

@@ -8,7 +8,7 @@
 
 .cabecalho {
 
-  background-color: #1d4ed8;
+  background-color: #f0a028;
 
   color: #ffffff;
 
@@ -90,10 +90,6 @@
 
   background-color: #ffffff;
 
-  border-left: 5px solid #1d4ed8;
-
-  border-radius: 8px;
-
   box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
 
   transition:
@@ -120,8 +116,7 @@
 
   margin: 0 0 12px;
 
-  color: #1d4ed8;
-
+  color: #f0a028;
   font-size: 1.4rem;
 
 }
@@ -183,7 +178,7 @@
 
 .pagina-clientes h1 {
   margin: 0 0 16px;
-  color: #1d4ed8;
+  color: #f0a028;
   font-size: 2rem;
 }
 
@@ -203,7 +198,7 @@
 .opcoes-clientes a {
   padding: 24px;
   background-color: #eff6ff;
-  color: #1d4ed8;
+  color: #f0a028;
   border: 2px solid #bfdbfe;
   border-radius: 8px;
   text-align: center;
@@ -222,7 +217,7 @@
 .pagina-clientes>a {
   display: inline-block;
   margin-top: 16px;
-  color: #1d4ed8;
+  color: #f0a028;
   text-decoration: none;
   font-weight: 600;
 }
@@ -246,7 +241,7 @@
   gap: 6px;
   padding: 20px;
   background-color: #f8fafc;
-  border-left: 5px solid #1d4ed8;
+  border-left: 5px solid #f0a028;
   border-radius: 6px;
 }
 
@@ -281,7 +276,7 @@
 }
 
 .formulario-cliente input:focus {
-  border-color: #1d4ed8;
+  border-color: #f0a028;
   outline: 2px solid #bfdbfe;
 }
 
@@ -289,7 +284,7 @@
   align-self: flex-start;
   margin-top: 16px;
   padding: 12px 20px;
-  background-color: #1d4ed8;
+  background-color: #f0a028;
   color: #ffffff;
   border: none;
   border-radius: 6px;
