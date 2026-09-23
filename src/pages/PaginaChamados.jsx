@@ -1,18 +1,7 @@
 import { Link } from "react-router"
 import Header from "../components/Header"
 
-export default function PaginaChamados({ chamados, onExclusion }) {
-
-    function confirmExclusion(chamado) {
-        const confirmation = window.confirm(
-            `Deseja realmente excluir o chamado ${chamado.titulo}?`
-        )
-        if (confirmation) {
-            onExclusion(chamado.id)
-            console.log(chamado)
-        }
-    }
-
+export default function PaginaChamados() {
 
     return (
         <>

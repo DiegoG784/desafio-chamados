@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import Header from "../components/Header";
 
-export default function CadastroChamado({ clientes, onSubmission }) {
+export default function CadastroChamado({ onSubmission }) {
     const [titulo, setTitulo] = useState('')
     const [descricao, setDescricao] = useState('')
     const [prioridade, setPrioridade] = useState('')
@@ -93,7 +93,7 @@ export default function CadastroChamado({ clientes, onSubmission }) {
                     />
 
                     <label htmlFor="status">Status</label>
-                    <select defaultValue={status}>
+                    <select defaultValue={status} onChange={(e) => setStatus(e.target.value)}>
                         <option value={"ABERTO"} selected>Aberto</option>
                         <option value={"FECHADO"}>Fechado</option>
                         <option value={"PENDENTE"}>Pendente</option>
