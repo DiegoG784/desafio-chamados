@@ -23,6 +23,7 @@ export default function ListaChamados({ chamados, onExclusion }) {
                     {chamados.map(chamado => (
                         <li key={chamado.id}>
                             <strong>{chamado.titulo}</strong>
+                            <span>ID: #{chamado.id}</span>
                             <span>Descrição: {chamado.descricao}</span>
                             <span>prioridade: {chamado.prioridade}</span>
                             <span>Solicitante: {chamado.solicitante}</span>
