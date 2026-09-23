@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import Header from "../components/Header";
+import InputForm from "../components/InputForm";
 
 export default function CadastroChamado({ onSubmission }) {
     const [titulo, setTitulo] = useState('')
@@ -40,55 +41,36 @@ export default function CadastroChamado({ onSubmission }) {
                 )}
 
                 <form className="formulario-cliente" onSubmit={cadastrar} noValidate>
-                    <label htmlFor="titulo">Título</label>
-                    <input
-                        id="titulo"
-                        type="text"
+                    <InputForm
+                        name={"titulo"}
+                        type={"text"}
+                        required
                         value={titulo}
-                        onChange={(evento) => {
-                            setTitulo(evento.target.value)
-                            // onSubmit = {
-                            //     cadastrarChamado
-                            // }
-
-                        }}
-                        required
+                        setState={setTitulo}
                     />
 
-
-                    <label htmlFor="descricao">Descrição</label>
-                    <input
-                        id="descricao"
-                        type="text"
+                    <InputForm
+                        name={"descricao"}
+                        type={"text"}
+                        required
                         value={descricao}
-                        onChange={(evento) => {
-                            setDescricao(evento.target.value)
-                        }}
-                        required
+                        setState={setDescricao}
                     />
 
-
-
-                    <label htmlFor="prioridade">Prioridade</label>
-                    <input
-                        id="prioridade"
-                        type="number"
+                    <InputForm
+                        name={"prioridade"}
+                        type={"number"}
+                        required
                         value={prioridade}
-                        onChange={(evento) => {
-                            setPrioridade(evento.target.value)
-                        }}
-                        required
+
+                        setState={setPrioridade}
                     />
 
-
-                    <label htmlFor="solicitante">Solicitante</label>
-                    <input
-                        id="solicitante"
-                        type="text"
+                    <InputForm
+                        name={"solicitante"}
+                        type={"text"}
                         value={solicitante}
-                        onChange={(evento) => {
-                            setSolicitante(evento.target.value)
-                        }}
+                        setState={setSolicitante}
                         required
                     />
 
